@@ -17,4 +17,4 @@ ActorComponent下面最重要的一个Component就非SceneComponent莫属了。S
 
 再来说说Component下面的家族（为了阐明概念，只列出了最常见的）：
 
-image:./GamePlay架构（一）Actor和Component/1.jpg[]
+image:./Image/4.jpg[]

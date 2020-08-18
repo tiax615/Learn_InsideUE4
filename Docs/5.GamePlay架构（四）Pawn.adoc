@@ -1,0 +1,20 @@
+# GamePlay架构（四）Pawn
+:toc:
+
+## Componenet
+确理解“功能”和“游戏业务逻辑”的区分是理解Component的关键要点。实现一个个“与特定游戏无关”的功能。理想情况下，等你的一个游戏完成，你那些已经实现完成的Components是可以无痛迁移到下一个游戏中用的。
+
+## Actor
+游戏逻辑卸载Actor中不一定很好。
+
+## Pawn
+哪些Actor需要附加逻辑？并不是所有的Actor都需要和玩家互动，而我们所谓的游戏业务逻辑，实际上编写的就是该如何对玩家的输入提供反馈。这样的类别划作Pawn。
+
+Pawn表达的最关键点是可被玩家操纵的能力。
+
+## DefaultPawn，SpectatorPawn，Character
+提供了一个默认的Pawn：DefaultPawn，默认带了一个DefaultPawnMovementComponent、spherical CollisionComponent和StaticMeshComponent。也是上述Pawn阐述过的三件套，只不过都是默认套餐。
+
+给他们一些摄像机“漫游”的能力。所以派生于DefaultPawn的SpectatorPawn提供了一个基本的USpectatorPawnMovement（不带重力漫游），并关闭了StaticMesh的显示，碰撞也设置到了“Spectator”通道。
+
+UE就为我们直接提供了一个人形的Pawn来让我们操纵。像人一样行走的CharacterMovementComponent， 尽量贴合的CapsuleComponent，再加上骨骼上蒙皮的网格。同样的三件套，不一样的配方。
