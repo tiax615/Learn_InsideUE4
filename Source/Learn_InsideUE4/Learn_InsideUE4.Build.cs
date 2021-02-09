@@ -19,5 +19,8 @@ public class Learn_InsideUE4 : ModuleRules
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
 
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
+		
+		// 关闭HotReload来学习UHT过程
+		PublicDefinitions.Add("WITH_HOT_RELOAD_CTORS=0");
 	}
 }
